@@ -11,15 +11,49 @@ import "../styles/global.css";
 		<title>Deenullah - The Way of Life</title>
 	</head>
 	<body>
-		<div class="header-bar2 p-2 deenullah-color text-center">بسم الله الرحمن الرحيم</div>
-		<div class="header-bar flex">
-			<h1 class="text-3xl deenullah-regular deenullah-color p-2 pt-4 ml-2">DEENULLAH</h1> <div class="text-base deenullah-italic deenullah-color ml-2 mt-5.5">The Way of Life</div>
+		<div class="header-bar2 p-1 deenullah-color text-center">بسم الله الرحمن الرحيم</div>
+		<div class="header-bar text-center">
+			<h1 class="text-3xl deenullah-regular deenullah-color p-2 pt-4 ml-2">DEENULLAH</h1><p class="text-base deenullah-italic deenullah-color mt-[-8px] pb-2">The Way of Life</p>
 		</div>
-		<div class="header-bar2 p-1">
+		<div class="header-bar2 p-1 deenullah-color text-xs p-1 text-center" id="data-container">
 		</div>
 		<slot />
 	</body>
 </html>
+
+<script>
+	const dataContainer = document.getElementById('data-container');
+	const date = new Date();
+	let day = date.getDate() - 1;
+	let month = date.getMonth() + 1;
+	let year = date.getFullYear();
+	let currentDate = `${day}-${month}-${year}`;
+	const getUrl = 'https://api.aladhan.com/v1/gToH/' + currentDate + '?'; 
+	const apiUrl = getUrl; 
+	async function fetchDataAndDisplay() {
+        try {
+            const response = await fetch(apiUrl);
+            const data = await response.json(); // Assuming the API returns JSON
+
+            // Clear previous content (optional)
+            dataContainer.innerHTML = ''; 
+
+			const postElement = document.createElement('div');
+                postElement.innerHTML = `
+                    ${data.data.hijri.day} ${data.data.hijri.month.en} ${data.data.hijri.year}
+                `;
+                dataContainer.appendChild(postElement);
+
+            // Iterate through the data and create HTML elements
+
+
+        } catch (error) {
+            console.error('Error fetching or displaying data:', error);
+            dataContainer.innerHTML = '<p>Failed to load data.</p>';
+        }
+    }
+	fetchDataAndDisplay();
+</script>
 
 <style>
 	@import "tailwindcss";
