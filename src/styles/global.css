@@ -1,1 +1,33 @@
 @import "tailwindcss";
+
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=DM+Serif+Display:ital@0;1&family=DM+Serif+Text:ital@0;1&family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&family=Rakkas&display=swap');
+
+html,
+	body {
+		margin: 0;
+		width: 100%;
+		height: 100%;
+        background-color: #E8D1C5;
+	}
+
+.deenullah-regular {
+  font-family: "DM Serif Display", serif;
+  font-weight: 800;
+}
+
+.deenullah-italic {
+  font-family: "DM Serif Display", serif;
+  font-weight: 400;
+  font-style: italic;
+}
+
+.header-bar {
+    background-color: #452829;
+}
+.header-bar2 {
+    background-color: #57595B;
+}
+
+.deenullah-color {
+    color: #F3E8DF;
+}
