@@ -1,21 +1,12 @@
 ---
-import Welcome from '../components/Welcome.astro';
 import Layout from '../layouts/Layout.astro';
-import { db, Comment } from 'astro:db';
-
-const comments = await db.select().from(Comment);
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
 ---
-
 <Layout>
-
-  <div class="p-4">
-    <span class="flex justify-center md:justify-start"><img src="/quran.svg" alt="Quran Icon" class="w-[60px] mb-[-12px] mt-4"></span>
+<div class="p-4">
+    <img src="/quran.svg" alt="" class="w-[60px] mb-[-28px]">
     <h1 class="leading-10 mb-[8px] deenullah-regular tracking-tighter md:tracking-normal">The Division of Juz by Maulana Imran Hosein</h1>
     <p>The division of Juz (30 parts) as proposed and recommended by Maulana Imran Hosein in his book <a href="https://imranhosein.org/o/wp-content/uploads/2021/04/Text-Final-The-Quran-and-the-Moon-Web.pdf" target="_blank">‘Quran and the Moon’</a>.</p>
-    <p>The Quran should be completed atleast once cover to cover each month by reciting each Juz on the corresponding lunar date. </p>
+    <p>The Quran can be completed cover to cover each month by reciting each Juz corresponding to the lunar date. </p>
   </div>
 
 	 <table class="w-[100%] md:w-[50%]">
@@ -174,6 +165,5 @@ const comments = await db.select().from(Comment);
     <td>Al Bayyina<br>Az Zalzala<br>Al Adiyat<br>Al Qari'a<br>At Takathur<br>Al Asr<br>Al Humaza<br>Al Fil<br>Quraysh<br>Al Ma'un<br>Al Kawthar<br>Al Kafirun<br>An Nasr<br>Al Masad<br>Al Ikhlas<br>Al Falaq<br>Al Nas</td>
     <td>8<br>8<br>11<br>11<br>8<br>3<br>9<br>5<br>4<br>7<br>3<br>6<br>3<br>5<br>4<br>5<br>6</td>
   </tr>
-</table> 
-
+</table>
 </Layout>
