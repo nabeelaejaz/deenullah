@@ -1,5 +1,6 @@
 ---
 import "../styles/global.css";
+import { ClientRouter } from "astro:transitions";
 ---
 <!doctype html>
 <html lang="en">
@@ -9,19 +10,25 @@ import "../styles/global.css";
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
 		<title>Deenullah - The Way of Life</title>
+		<ClientRouter />
 		<script>
 			/*to prevent Firefox FOUC, this must be here*/
 			let FF_FOUC_FIX;
 		</script>
 	</head>
 	<body>
-		<div class="header-bar2 p-1 deenullah-color text-center text-base">بسم الله الرحمن الرحيم</div>
-		<div class="header-bar text-center">
-			<h1 class="text-3xl deenullah-regular deenullah-color p-2 pt-3 ml-2">DEENULLAH</h1><p class="text-base deenullah-italic deenullah-color mt-[-8px] pb-2">The Way of Life</p>
-		</div>
-		<div class="header-bar2 p-1 deenullah-color text-xs p-1 text-center" id="data-container">
-		</div>
+		<header>
+			<div class="header-bar2 p-1 deenullah-color text-center text-base">بسم الله الرحمن الرحيم</div>
+			<a href="/"><div class="header-bar text-center">
+				<h1 class="text-3xl deenullah-regular deenullah-color p-2 pt-3 ml-2">DEENULLAH</h1><p class="text-base deenullah-italic deenullah-color mt-[-8px] pb-2">The Way of Life</p>
+			</div></a>
+			<div class="header-bar2 p-1 deenullah-color text-sm p-1 text-center" id="data-container">
+			</div>
+		</header>
 		<slot />
+		<footer>
+			<div class="text-center pb-4">Deenullah. All Rights Reserved.</div>
+		</footer>
 	</body>
 </html>
 
