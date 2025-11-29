@@ -18,16 +18,17 @@ import { ClientRouter } from "astro:transitions";
 	</head>
 	<body>
 		<header>
-			<div class="header-bar2 p-1 deenullah-color text-center text-base">بسم الله الرحمن الرحيم</div>
+			<div class="header-bar2 p-1 deenullah-color text-center text-base md:text-xl md:pt-2">بسم الله الرحمن الرحيم</div>
 			<a href="/"><div class="header-bar text-center">
-				<h1 class="text-3xl deenullah-regular deenullah-color p-2 pt-3 ml-2">DEENULLAH</h1><p class="text-base deenullah-italic deenullah-color mt-[-8px] pb-2">The Way of Life</p>
+				<h1 class="text-3xl md:text-5xl deenullah-regular deenullah-color p-2 md:pt-5 pt-3 ml-2">DEENULLAH</h1>
+				<div class="deenullah-italic deenullah-color mt-[-8px] pb-2 md:pb-3 md:text-3xl">The Way of Life</div>
 			</div></a>
-			<div class="header-bar2 p-1 deenullah-color text-sm p-1 text-center" id="data-container" transition:persist>
+			<div class="header-bar2 p-1 md:pt-2 deenullah-color text-sm p-1 text-center md:text-xl" id="data-container" transition:persist>&#8203;
 			</div>
 		</header>
 		<slot />
 		<footer>
-			<div class="text-center pb-4">Deenullah. All Rights Reserved.</div>
+			<div class="text-center p-2 mt-4 footer deenullah-color"><b>Deenullah</b>. All Rights Reserved.</div>
 		</footer>
 	</body>
 </html>
