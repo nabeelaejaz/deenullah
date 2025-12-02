@@ -37,6 +37,9 @@ table, th, td {
 td {
   text-align: center;
 }
+table a {
+  text-decoration: none;
+}
 table th {
   background-color: #414345;
 }
