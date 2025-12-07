@@ -1,6 +1,7 @@
 ---
 import "../styles/global.css";
 import { ClientRouter } from "astro:transitions";
+import GoogleAnalytics from '@astro-kits/google-analytics';
 ---
 <!doctype html>
 <html lang="en">
@@ -15,6 +16,7 @@ import { ClientRouter } from "astro:transitions";
 			/*to prevent Firefox FOUC, this must be here*/
 			let FF_FOUC_FIX;
 		</script>
+		<GoogleAnalytics />
 	</head>
 	<body>
 		<header>
