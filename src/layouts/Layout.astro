@@ -46,8 +46,14 @@ import GoogleAnalytics from '@astro-kits/google-analytics';
 	const dataContainer = document.getElementById('data-container');
 	const date = new Date();
 	let day = date.getDate() - 1;
+	if (date.getHours() < 18 ) {
+		day = date.getDate() - 1;
+	} else {
+		day = date.getDate();
+	};
 	let month = date.getMonth() + 1;
 	let year = date.getFullYear();
+	console.log(date.getHours());
 	let currentDate = `${day}-${month}-${year}`;
 	const getUrl = 'https://api.aladhan.com/v1/gToH/' + currentDate + '?'; 
 	const apiUrl = getUrl; 
