@@ -1,0 +1,142 @@
+/* === Container === */
+.aj-timeline {
+  --aj-line-color: #d1d5db;
+  --aj-dot-color: #ff0000;
+  --aj-title-hover-color: #3b82f6;
+  --aj-title-color: inherit;
+  --aj-desc-color: inherit;
+  --aj-date-color: inherit;
+  --aj-dot-size: 8px;
+  --aj-line-width: 2px;
+  --aj-spacing: 1.5rem;
+  --aj-content-gap: 1rem;
+
+  display: flex;
+  flex-direction: column;
+  padding-top: 2.5rem;
+}
+
+/* === Item Layout === */
+.aj-item {
+  display: grid;
+  grid-template-columns: auto auto 1fr;
+  gap: var(--aj-content-gap);
+}
+
+/* === Marker (dot + line) === */
+.aj-marker {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-shrink: 0;
+  position: relative;
+}
+
+.aj-dot {
+  width: var(--aj-dot-size);
+  height: var(--aj-dot-size);
+  background-color: var(--aj-dot-color);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.aj-line {
+  width: var(--aj-line-width);
+  flex-grow: 1;
+  background-color: var(--aj-line-color);
+  margin-top: 0.5rem;
+}
+
+.aj-line-top {
+  position: absolute;
+  height: 2rem;
+  margin-top: -2rem;
+}
+
+.aj-line-bottom {
+  margin-top: 0.5rem;
+  min-height: 3rem;
+  flex-grow: 0;
+}
+
+/* === Content === */
+.aj-content {
+  flex: 1;
+  min-width: 0;
+}
+
+.aj-content-inner {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+}
+
+.aj-text {
+  flex: 1;
+  min-width: 0;
+}
+
+
+.aj-link {
+  text-decoration: none;
+  color: inherit;
+  transition: transform 0.2s ease;
+  display: block;
+  cursor: pointer;
+}
+
+.aj-link:hover {
+  transform: translateX(4px);
+}
+
+.aj-date {
+  font-size: 0.875rem;
+  color: var(--aj-date-color);
+  opacity: 0.9;
+  text-align: right;
+  width: 8rem;
+  flex-shrink: 0;
+  margin-top: -0.25rem;
+}
+
+.aj-title {
+  font-size: 1.125rem;
+  font-weight: 600;
+  margin: -0.45rem 0 0.25rem 0;
+  line-height: 1.4;
+  color: var(--aj-title-color);
+  transition: color 0.2s ease;
+}
+
+.aj-item:hover .aj-title {
+  color: var(--aj-title-hover-color);
+}
+
+.aj-desc {
+  font-size: 0.875rem;
+  color: var(--aj-desc-color);
+  opacity: 0.7;
+  margin: 0;
+  line-height: 1.5;
+}
+
+/* === Image === */
+.aj-image {
+  max-width: 100px;
+  max-height: 100px;
+  width: auto;
+  height: auto;
+  border-radius: 0.5rem;
+  flex-shrink: 0;
+}
+
+/* === Dark Mode === */
+@media (prefers-color-scheme: dark) {
+  .aj-timeline {
+    --aj-line-color: #4b5563;
+    --aj-dot-color: #9ca3af;
+  }
+}
