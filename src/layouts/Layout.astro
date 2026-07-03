@@ -47,8 +47,10 @@ import GoogleAnalytics from '@astro-kits/google-analytics';
 	const dataContainer = document.getElementById('data-container');
 	const date = new Date();
 	let day = date.getDate();
+	// let day = date.getDate() -1;
 	if (date.getHours() < 18 ) {
 		day = date.getDate();
+		//day = date.getDate() -1;
 	} else {
 		day = date.getDate();
 	};
